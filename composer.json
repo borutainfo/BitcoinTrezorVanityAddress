@@ -1,0 +1,34 @@
+{
+  "name": "boruta/bitcoin-trezor-vanity-address",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Boruta",
+      "email": "sebastian@boruta.info"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Boruta\\BitcoinVanity\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "bitwasp/bitcoin": "0.0.35.1",
+    "symfony/yaml": "4.2.1",
+    "pimple/pimple": "3.2.3",
+    "cartalyst/collections": "1.1.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  },
+  "scripts": {
+    "download-dictionaries": [
+      "curl -o ./config/dictionaries/english.txt https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt",
+      "curl -o ./config/dictionaries/polish.txt https://raw.githubusercontent.com/turekj/msc/master/CheatAR/development/server/word-dictionary-importer/src/main/resources/scrabble-polish-words.txt"
+    ],
+    "post-install-cmd": [
+      "@download-dictionaries"
+    ]
+  }
+}

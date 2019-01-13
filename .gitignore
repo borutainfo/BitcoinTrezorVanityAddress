@@ -1,0 +1,7 @@
+.idea/
+composer.lock
+vendor/
+config/*.yml
+config/dictionaries/*.txt
+config/*.txt
+logs/
