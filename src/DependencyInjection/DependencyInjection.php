@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 11.12.18
- * Time: 17:38
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\DependencyInjection;
@@ -12,7 +9,6 @@ namespace Boruta\BitcoinVanity\DependencyInjection;
 use Exception;
 use Pimple\Container;
 use ReflectionClass;
-
 
 /**
  * Class DependencyInjection

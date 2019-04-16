@@ -1,19 +1,18 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 12.12.18
- * Time: 18:51
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Exception;
 
 
+use RuntimeException;
+
 /**
  * Class AddressConversionException
  * @package Boruta\BitcoinVanity\Exception
  */
-class AddressConversionException extends \RuntimeException
+class AddressConversionException extends RuntimeException
 {
 
 }

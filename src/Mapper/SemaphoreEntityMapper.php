@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 10.01.19
- * Time: 18:10
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Mapper;
@@ -13,7 +10,7 @@ namespace Boruta\BitcoinVanity\Mapper;
  * Class SemaphoreEntityMapper
  * @package Boruta\BitcoinVanity\Mapper
  */
-class SemaphoreEntityMapper
+abstract class SemaphoreEntityMapper
 {
     public const TABLE = 'semaphore';
 

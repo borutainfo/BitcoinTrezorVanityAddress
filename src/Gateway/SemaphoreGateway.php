@@ -1,17 +1,13 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 10.01.19
- * Time: 17:44
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Gateway;
 
+
 use Boruta\BitcoinVanity\Config\DatabaseConfig;
 use Boruta\BitcoinVanity\Mapper\SemaphoreEntityMapper;
-use PDO;
-
 
 /**
  * Class SemaphoreGateway
@@ -53,8 +49,8 @@ class SemaphoreGateway extends AbstractDatabaseGateway
         $this->database()->beginTransaction();
 
         $stmt = $this->database()->prepare($queryUpdate);
-        $stmt->bindValue(':' . SemaphoreEntityMapper::FIELD_INSTANCE, $this->instanceId, PDO::PARAM_STR);
-        $stmt->bindValue(':' . SemaphoreEntityMapper::FIELD_TYPE, $type, PDO::PARAM_STR);
+        $stmt->bindValue(':' . SemaphoreEntityMapper::FIELD_INSTANCE, $this->instanceId);
+        $stmt->bindValue(':' . SemaphoreEntityMapper::FIELD_TYPE, $type);
 
         if (!$stmt->execute()) {
             $this->database()->rollBack();
@@ -62,8 +58,8 @@ class SemaphoreGateway extends AbstractDatabaseGateway
         }
 
         $stmt = $this->database()->prepare($querySelect);
-        $stmt->bindValue(':' . SemaphoreEntityMapper::FIELD_INSTANCE, $this->instanceId, PDO::PARAM_STR);
-        $stmt->bindValue(':' . SemaphoreEntityMapper::FIELD_TYPE, $type, PDO::PARAM_STR);
+        $stmt->bindValue(':' . SemaphoreEntityMapper::FIELD_INSTANCE, $this->instanceId);
+        $stmt->bindValue(':' . SemaphoreEntityMapper::FIELD_TYPE, $type);
 
         if (!$stmt->execute()) {
             $this->database()->rollBack();

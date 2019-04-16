@@ -1,11 +1,7 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 08.01.19
- * Time: 17:00
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
-
 
 use Boruta\BitcoinVanity\DependencyInjection\DependencyInjection;
 use Boruta\BitcoinVanity\Entity\AddressWordEntity;
@@ -54,7 +50,7 @@ while ($filename = readdir($directory)) {
 $words = [];
 foreach (explode(PHP_EOL, $dictionaries) as $word) {
     try {
-        $words[] = (Word::createFromString($word))->value();
+        $words[] = Word::createFromString($word)->value();
     } catch (ValueObjectException $exception) {
         continue;
     }
@@ -65,6 +61,8 @@ $words = array_unique($words);
 
 unlink($dictionaries, $directory);
 $counter = 0;
+
+echo 'Working...' . PHP_EOL;
 
 try {
     $semaphoreType = new RawString($semaphoreType);

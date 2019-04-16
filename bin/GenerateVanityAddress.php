@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 12.12.18
- * Time: 10:00
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 use BitWasp\Bitcoin\Crypto\Random\Random;
@@ -11,6 +8,7 @@ use BitWasp\Bitcoin\Key\Deterministic\HierarchicalKeyFactory;
 use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39Mnemonic;
 use BitWasp\Bitcoin\Mnemonic\Bip39\Bip39SeedGenerator;
 use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
+use Boruta\BitcoinVanity\Collection\AddressEntityCollection;
 use Boruta\BitcoinVanity\Command\ConvertToAddressCommand;
 use Boruta\BitcoinVanity\Command\EncryptDataCommand;
 use Boruta\BitcoinVanity\DependencyInjection\DependencyInjection;
@@ -29,7 +27,7 @@ use Boruta\BitcoinVanity\ValueObject\RawString;
 $timeLimit = 2;
 $entropySizeInBytes = 32;
 $addressCountForSeed = 5;
-$purposes = [44, 49];
+$purposes = [44, 49, 84];
 
 /* script: */
 
@@ -58,6 +56,8 @@ $seedGenerator = new Bip39SeedGenerator();
 
 $counter = 0;
 
+echo 'Working...' . PHP_EOL;
+
 try {
     while (($startTime + ($timeLimit * 60)) > time()) {
         $random = new Random();
@@ -80,6 +80,8 @@ try {
             $purposePub = $purposePriv->toExtendedPublicKey();
             $xpub = HierarchicalKeyFactory::fromExtended($purposePub);
 
+            $addressEntityCollection = new AddressEntityCollection();
+
             for ($i = 0; $i < $addressCountForSeed; $i++) {
                 $derivePathEnd = '0/' . $i;
                 $privateKey = $purposePriv->derivePath($derivePathEnd)->getPrivateKey()->toWif();
@@ -99,8 +101,11 @@ try {
                 $addressEntity->setDerivedPath(new DerivedPath($derivePath));
                 $addressEntity->setMnemonicId($mnemonicSeedEntity->getId());
                 $addressEntity->setPrivateKeyId($privateKeyEntity->getId());
-                $addressRepository->addNewAddress($addressEntity);
+
+                $addressEntityCollection->push($addressEntity);
             }
+
+            $addressRepository->addMultipleAddresses($addressEntityCollection);
         }
 
         $counter++;

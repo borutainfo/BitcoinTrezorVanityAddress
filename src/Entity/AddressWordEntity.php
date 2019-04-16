@@ -1,15 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 07.01.19
- * Time: 21:11
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Entity;
 
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
 
+use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
 
 /**
  * Class AddressWordEntity

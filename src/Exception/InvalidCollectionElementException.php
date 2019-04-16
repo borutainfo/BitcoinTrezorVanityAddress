@@ -9,10 +9,10 @@ namespace Boruta\BitcoinVanity\Exception;
 use RuntimeException;
 
 /**
- * Class DatabaseConfigException
+ * Class InvalidCollectionElementException
  * @package Boruta\BitcoinVanity\Exception
  */
-class DatabaseConfigException extends RuntimeException
+class InvalidCollectionElementException extends RuntimeException
 {
 
 }

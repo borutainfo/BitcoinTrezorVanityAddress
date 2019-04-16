@@ -1,19 +1,18 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 10.12.18
- * Time: 20:31
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Exception;
 
 
+use RuntimeException;
+
 /**
  * Class DatabaseConnectionException
  * @package Boruta\BitcoinVanity\Exception
  */
-class DatabaseConnectionException extends \RuntimeException
+class DatabaseConnectionException extends RuntimeException
 {
 
 }

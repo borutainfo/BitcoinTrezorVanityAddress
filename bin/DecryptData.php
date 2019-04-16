@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 12.12.18
- * Time: 18:11
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 use Boruta\BitcoinVanity\Command\DecryptDataCommand;

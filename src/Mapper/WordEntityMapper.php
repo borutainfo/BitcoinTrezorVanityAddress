@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 07.01.19
- * Time: 21:16
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Mapper;
@@ -13,7 +10,7 @@ namespace Boruta\BitcoinVanity\Mapper;
  * Class WordEntityMapper
  * @package Boruta\BitcoinVanity\Mapper
  */
-class WordEntityMapper
+abstract class WordEntityMapper
 {
     public const TABLE = 'words';
 

@@ -17,7 +17,10 @@
     "bitwasp/bitcoin": "0.0.35.1",
     "symfony/yaml": "4.2.1",
     "pimple/pimple": "3.2.3",
-    "cartalyst/collections": "1.1.0"
+    "cartalyst/collections": "1.1.0",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-iconv": "*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"

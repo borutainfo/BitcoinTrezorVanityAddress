@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 09.12.18
- * Time: 14:59
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Mapper;
@@ -13,7 +10,7 @@ namespace Boruta\BitcoinVanity\Mapper;
  * Class AddressEntityMapper
  * @package Boruta\BitcoinVanity\Mapper
  */
-class AddressEntityMapper
+abstract class AddressEntityMapper
 {
     public const TABLE = 'addresses';
 

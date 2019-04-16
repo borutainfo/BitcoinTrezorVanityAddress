@@ -16,12 +16,10 @@ CREATE TABLE mnemonic_seeds
   id               INT UNSIGNED AUTO_INCREMENT
   COMMENT 'record id'
     PRIMARY KEY,
-  encrypted_phrase VARCHAR(256)         NOT NULL
+  encrypted_phrase VARCHAR(255)         NOT NULL
   COMMENT 'seed phrase encrypted',
   entropy_size     INT(3) DEFAULT '256' NOT NULL
-  COMMENT 'entropy size in bits',
-  CONSTRAINT mnemonic_seeds_encrypted_phrase_uindex
-  UNIQUE (encrypted_phrase)
+  COMMENT 'entropy size in bits'
 )
   COMMENT 'encrypted mnemonic seeds list'
   ENGINE = InnoDB;
@@ -102,4 +100,4 @@ CREATE INDEX addresses_mnemonic_seeds_id_fk
 CREATE INDEX addresses_private_keys_id_fk
   ON addresses (private_key_id);
 
-INSERT INTO bitcoin.semaphore (type, locked_id, instance) VALUES ('word', 0, '-');
+INSERT INTO semaphore (type, locked_id, instance) VALUES ('word', 0, '-');

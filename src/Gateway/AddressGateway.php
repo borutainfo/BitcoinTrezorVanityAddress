@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 11.12.18
- * Time: 17:20
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Gateway;
@@ -24,6 +21,15 @@ class AddressGateway extends AbstractDatabaseGateway
     public function addNewAddress(array $data): ?int
     {
         return $this->insert($data, AddressEntityMapper::TABLE);
+    }
+
+    /**
+     * @param array $data
+     * @return bool
+     */
+    public function addMultipleAddress(array $data): bool
+    {
+        return $this->insertMultiple($data, AddressEntityMapper::TABLE);
     }
 
     /**

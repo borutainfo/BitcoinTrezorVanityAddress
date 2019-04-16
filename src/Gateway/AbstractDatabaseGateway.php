@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 10.12.18
- * Time: 20:27
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Gateway;
@@ -97,6 +94,36 @@ abstract class AbstractDatabaseGateway
         }
         $id = (int)$this->database()->lastInsertId();
         return $id <= 0 ? 0 : $id;
+    }
+
+    /**
+     * @param array $data
+     * @param string $table
+     * @param bool $ignore
+     * @return bool
+     */
+    protected function insertMultiple(array $data, string $table, bool $ignore = false): bool
+    {
+        if (!is_array($data) || empty($data) || !array_key_exists(0, $data)) {
+            return false;
+        }
+
+        $dataToInsert = [];
+        foreach ($data as $singleData) {
+            foreach ($singleData as $value) {
+                $dataToInsert[] = $value;
+            }
+        }
+
+        $insertFields = implode(array_keys($data[0]), ', ');
+
+        $rowPlaces = '(' . implode(', ', array_fill(0, \count($data[0]), '?')) . ')';
+        $bindParams = implode(', ', array_fill(0, \count($data), $rowPlaces));
+
+        $query = 'INSERT' . ($ignore ? ' IGNORE' : '') . ' INTO ' . $table . ' (' . $insertFields . ') VALUES ' . $bindParams;
+        $stmt = $this->database()->prepare($query);
+
+        return $stmt->execute(array_values($dataToInsert));
     }
 
     /**

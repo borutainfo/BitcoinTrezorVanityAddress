@@ -1,9 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 09.12.18
- * Time: 14:58
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Mapper;
@@ -13,7 +10,7 @@ namespace Boruta\BitcoinVanity\Mapper;
  * Class MnemonicSeedEntityMapper
  * @package Boruta\BitcoinVanity\Mapper
  */
-class MnemonicSeedEntityMapper
+abstract class MnemonicSeedEntityMapper
 {
     public const TABLE = 'mnemonic_seeds';
 

@@ -1,14 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: boruta
- * Date: 11.12.18
- * Time: 17:31
+ * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
 namespace Boruta\BitcoinVanity\Repository;
 
 
+use Boruta\BitcoinVanity\Collection\AddressEntityCollection;
 use Boruta\BitcoinVanity\Entity\AddressEntity;
 use Boruta\BitcoinVanity\Exception\RepositoryException;
 use Boruta\BitcoinVanity\Extractor\AddressEntityExtractor;
@@ -52,6 +50,24 @@ class AddressRepository
         }
 
         $entity->setId(new UnsignedNumber($result));
+    }
+
+    /**
+     * @param AddressEntityCollection $collection
+     */
+    public function addMultipleAddresses(AddressEntityCollection $collection): void
+    {
+        $data = [];
+        $extractor = new AddressEntityExtractor();
+
+        /** @var AddressEntity $entity */
+        foreach ($collection as $entity) {
+            $data[] = $extractor->extract($entity);
+        }
+
+        if (!$this->gateway->addMultipleAddress($data)) {
+            throw new RepositoryException('Unable to add multiple address - operation was unsuccessful.');
+        }
     }
 
     /**
