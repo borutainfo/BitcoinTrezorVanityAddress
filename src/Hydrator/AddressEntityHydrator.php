@@ -7,11 +7,11 @@ namespace Boruta\BitcoinVanity\Hydrator;
 
 
 use Boruta\BitcoinVanity\Entity\AddressEntity;
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
 use Boruta\BitcoinVanity\Mapper\AddressEntityMapper;
 use Boruta\BitcoinVanity\ValueObject\Address;
 use Boruta\BitcoinVanity\ValueObject\DerivedPath;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class AddressEntityHydrator

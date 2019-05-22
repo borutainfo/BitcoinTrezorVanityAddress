@@ -8,7 +8,7 @@ namespace Boruta\BitcoinVanity\Extractor;
 
 use Boruta\BitcoinVanity\Entity\AddressEntity;
 use Boruta\BitcoinVanity\Mapper\AddressEntityMapper;
-use Boruta\BitcoinVanity\ValueObject\ValueObjectInterface;
+use Boruta\CommonAbstraction\ValueObject\ValueObjectInterface;
 
 /**
  * Class AddressEntityExtractor

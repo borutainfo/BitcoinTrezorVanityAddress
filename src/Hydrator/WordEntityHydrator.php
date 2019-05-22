@@ -7,9 +7,9 @@ namespace Boruta\BitcoinVanity\Hydrator;
 
 
 use Boruta\BitcoinVanity\Entity\WordEntity;
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
 use Boruta\BitcoinVanity\Mapper\WordEntityMapper;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 use Boruta\BitcoinVanity\ValueObject\Word;
 
 /**

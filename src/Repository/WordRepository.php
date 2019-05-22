@@ -7,11 +7,11 @@ namespace Boruta\BitcoinVanity\Repository;
 
 
 use Boruta\BitcoinVanity\Entity\WordEntity;
-use Boruta\BitcoinVanity\Exception\RepositoryException;
+use Boruta\CommonAbstraction\Exception\RepositoryException;
 use Boruta\BitcoinVanity\Extractor\WordEntityExtractor;
 use Boruta\BitcoinVanity\Gateway\WordGateway;
 use Boruta\BitcoinVanity\Hydrator\WordEntityHydrator;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class WordRepository

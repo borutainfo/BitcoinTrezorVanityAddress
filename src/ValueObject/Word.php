@@ -6,8 +6,9 @@
 namespace Boruta\BitcoinVanity\ValueObject;
 
 
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
 use Boruta\BitcoinVanity\Helper\StringHelper;
+use Boruta\CommonAbstraction\ValueObject\ValueObjectInterface;
 
 /**
  * Class Word

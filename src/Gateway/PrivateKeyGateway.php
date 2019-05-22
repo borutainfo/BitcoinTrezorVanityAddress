@@ -7,6 +7,7 @@ namespace Boruta\BitcoinVanity\Gateway;
 
 
 use Boruta\BitcoinVanity\Mapper\PrivateKeyEntityMapper;
+use Boruta\CommonAbstraction\Gateway\AbstractDatabaseGateway;
 
 /**
  * Class PrivateKeyGateway

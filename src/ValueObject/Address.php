@@ -7,7 +7,8 @@ namespace Boruta\BitcoinVanity\ValueObject;
 
 
 use BitWasp\Bitcoin\Address\AddressCreator;
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\ValueObject\ValueObjectInterface;
 use Exception;
 
 /**

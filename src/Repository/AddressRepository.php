@@ -8,12 +8,12 @@ namespace Boruta\BitcoinVanity\Repository;
 
 use Boruta\BitcoinVanity\Collection\AddressEntityCollection;
 use Boruta\BitcoinVanity\Entity\AddressEntity;
-use Boruta\BitcoinVanity\Exception\RepositoryException;
+use Boruta\CommonAbstraction\Exception\RepositoryException;
 use Boruta\BitcoinVanity\Extractor\AddressEntityExtractor;
 use Boruta\BitcoinVanity\Gateway\AddressGateway;
 use Boruta\BitcoinVanity\Hydrator\AddressEntityHydrator;
 use Boruta\BitcoinVanity\Mapper\AddressEntityMapper;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class AddressRepository

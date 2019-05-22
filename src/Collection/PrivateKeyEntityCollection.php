@@ -7,6 +7,7 @@ namespace Boruta\BitcoinVanity\Collection;
 
 
 use Boruta\BitcoinVanity\Entity\PrivateKeyEntity;
+use Boruta\CommonAbstraction\Collection\AbstractCollection;
 
 /**
  * Class PrivateKeyEntityCollection

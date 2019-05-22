@@ -3,17 +3,18 @@
  * @author Sebastian Boruta <sebastian@boruta.info>
  */
 
-use Boruta\BitcoinVanity\DependencyInjection\DependencyInjection;
+use Boruta\CommonAbstraction\Config\DatabaseConfig;
+use Boruta\CommonAbstraction\DependencyInjector\DependencyInjector;
 use Boruta\BitcoinVanity\Entity\AddressWordEntity;
 use Boruta\BitcoinVanity\Entity\WordEntity;
-use Boruta\BitcoinVanity\Exception\RepositoryException;
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\Exception\RepositoryException;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
 use Boruta\BitcoinVanity\Repository\AddressRepository;
 use Boruta\BitcoinVanity\Repository\AddressWordRepository;
 use Boruta\BitcoinVanity\Repository\SemaphoreRepository;
 use Boruta\BitcoinVanity\Repository\WordRepository;
-use Boruta\BitcoinVanity\ValueObject\RawString;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\RawString;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 use Boruta\BitcoinVanity\ValueObject\Word;
 
 /* config: */
@@ -32,14 +33,18 @@ error_reporting(E_ALL & ~E_STRICT & ~E_WARNING & ~E_NOTICE);
 
 echo 'Starting...' . PHP_EOL;
 
+DependencyInjector::set(DatabaseConfig::class, function () {
+    return new DatabaseConfig(__DIR__ . '/../config/database.yml');
+});
+
 /** @var AddressRepository $addressRepository */
-$addressRepository = DependencyInjection::get(AddressRepository::class);
+$addressRepository = DependencyInjector::get(AddressRepository::class);
 /** @var AddressWordRepository $addressWordRepository */
-$addressWordRepository = DependencyInjection::get(AddressWordRepository::class);
+$addressWordRepository = DependencyInjector::get(AddressWordRepository::class);
 /** @var WordRepository $wordRepository */
-$wordRepository = DependencyInjection::get(WordRepository::class);
+$wordRepository = DependencyInjector::get(WordRepository::class);
 /** @var SemaphoreRepository $semaphoreRepository */
-$semaphoreRepository = DependencyInjection::get(SemaphoreRepository::class);
+$semaphoreRepository = DependencyInjector::get(SemaphoreRepository::class);
 
 $dictionaries = '';
 $directory = opendir($dictionariesLocation);

@@ -7,10 +7,10 @@ namespace Boruta\BitcoinVanity\Repository;
 
 
 use Boruta\BitcoinVanity\Entity\MnemonicSeedEntity;
-use Boruta\BitcoinVanity\Exception\RepositoryException;
+use Boruta\CommonAbstraction\Exception\RepositoryException;
 use Boruta\BitcoinVanity\Extractor\MnemonicSeedEntityExtractor;
 use Boruta\BitcoinVanity\Gateway\MnemonicSeedGateway;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class MnemonicSeedRepository

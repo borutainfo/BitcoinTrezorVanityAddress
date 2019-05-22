@@ -6,7 +6,7 @@
 namespace Boruta\BitcoinVanity\Repository;
 
 use Boruta\BitcoinVanity\Entity\AddressWordEntity;
-use Boruta\BitcoinVanity\Exception\RepositoryException;
+use Boruta\CommonAbstraction\Exception\RepositoryException;
 use Boruta\BitcoinVanity\Extractor\AddressWordEntityExtractor;
 use Boruta\BitcoinVanity\Gateway\AddressWordGateway;
 use Boruta\BitcoinVanity\Hydrator\AddressWordEntityHydrator;

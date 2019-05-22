@@ -6,11 +6,11 @@
 namespace Boruta\BitcoinVanity\Hydrator;
 
 use Boruta\BitcoinVanity\Entity\MnemonicSeedEntity;
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
 use Boruta\BitcoinVanity\Mapper\MnemonicSeedEntityMapper;
 use Boruta\BitcoinVanity\ValueObject\EntropySize;
-use Boruta\BitcoinVanity\ValueObject\RawString;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\RawString;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 
 /**

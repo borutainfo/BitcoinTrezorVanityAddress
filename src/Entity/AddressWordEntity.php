@@ -6,7 +6,7 @@
 namespace Boruta\BitcoinVanity\Entity;
 
 
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class AddressWordEntity

@@ -7,10 +7,10 @@ namespace Boruta\BitcoinVanity\Repository;
 
 
 use Boruta\BitcoinVanity\Entity\PrivateKeyEntity;
-use Boruta\BitcoinVanity\Exception\RepositoryException;
+use Boruta\CommonAbstraction\Exception\RepositoryException;
 use Boruta\BitcoinVanity\Extractor\PrivateKeyEntityExtractor;
 use Boruta\BitcoinVanity\Gateway\PrivateKeyGateway;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class PrivateKeyRepository

@@ -7,7 +7,8 @@ namespace Boruta\BitcoinVanity\ValueObject;
 
 
 use Boruta\BitcoinVanity\Constant\EntropySizeConstant;
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\ValueObject\ValueObjectInterface;
 use ReflectionClass;
 use ReflectionException;
 

@@ -6,8 +6,9 @@
 namespace Boruta\BitcoinVanity\Gateway;
 
 
-use Boruta\BitcoinVanity\Config\DatabaseConfig;
 use Boruta\BitcoinVanity\Mapper\SemaphoreEntityMapper;
+use Boruta\CommonAbstraction\Config\DatabaseConfig;
+use Boruta\CommonAbstraction\Gateway\AbstractDatabaseGateway;
 
 /**
  * Class SemaphoreGateway

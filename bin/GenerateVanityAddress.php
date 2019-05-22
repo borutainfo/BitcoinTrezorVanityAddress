@@ -11,7 +11,8 @@ use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
 use Boruta\BitcoinVanity\Collection\AddressEntityCollection;
 use Boruta\BitcoinVanity\Command\ConvertToAddressCommand;
 use Boruta\BitcoinVanity\Command\EncryptDataCommand;
-use Boruta\BitcoinVanity\DependencyInjection\DependencyInjection;
+use Boruta\CommonAbstraction\Config\DatabaseConfig;
+use Boruta\CommonAbstraction\DependencyInjector\DependencyInjector;
 use Boruta\BitcoinVanity\Entity\AddressEntity;
 use Boruta\BitcoinVanity\Entity\MnemonicSeedEntity;
 use Boruta\BitcoinVanity\Entity\PrivateKeyEntity;
@@ -20,7 +21,7 @@ use Boruta\BitcoinVanity\Repository\MnemonicSeedRepository;
 use Boruta\BitcoinVanity\Repository\PrivateKeyRepository;
 use Boruta\BitcoinVanity\ValueObject\DerivedPath;
 use Boruta\BitcoinVanity\ValueObject\EntropySize;
-use Boruta\BitcoinVanity\ValueObject\RawString;
+use Boruta\CommonAbstraction\ValueObject\RawString;
 
 /* config: */
 
@@ -39,16 +40,20 @@ error_reporting(E_ALL & ~E_STRICT & ~E_WARNING & ~E_NOTICE);
 
 echo 'Starting...' . PHP_EOL;
 
+DependencyInjector::set(DatabaseConfig::class, function () {
+    return new DatabaseConfig(__DIR__ . '/../config/database.yml');
+});
+
 /** @var PrivateKeyRepository $privateKeyRepository */
-$privateKeyRepository = DependencyInjection::get(PrivateKeyRepository::class);
+$privateKeyRepository = DependencyInjector::get(PrivateKeyRepository::class);
 /** @var MnemonicSeedRepository $mnemonicSeedRepository */
-$mnemonicSeedRepository = DependencyInjection::get(MnemonicSeedRepository::class);
+$mnemonicSeedRepository = DependencyInjector::get(MnemonicSeedRepository::class);
 /** @var AddressRepository $addressRepository */
-$addressRepository = DependencyInjection::get(AddressRepository::class);
+$addressRepository = DependencyInjector::get(AddressRepository::class);
 /** @var ConvertToAddressCommand $convertToAddressCommand */
-$convertToAddressCommand = DependencyInjection::get(ConvertToAddressCommand::class);
+$convertToAddressCommand = DependencyInjector::get(ConvertToAddressCommand::class);
 /** @var EncryptDataCommand $encryptDataCommand */
-$encryptDataCommand = DependencyInjection::get(EncryptDataCommand::class);
+$encryptDataCommand = DependencyInjector::get(EncryptDataCommand::class);
 /** @var Bip39Mnemonic $bip39 */
 $bip39 = MnemonicFactory::bip39();
 /** @var Bip39SeedGenerator $seedGenerator */

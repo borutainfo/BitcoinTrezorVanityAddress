@@ -6,8 +6,8 @@ namespace Boruta\BitcoinVanity\Entity;
 
 
 use Boruta\BitcoinVanity\ValueObject\EntropySize;
-use Boruta\BitcoinVanity\ValueObject\RawString;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\RawString;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class MnemonicSeedEntity

@@ -7,6 +7,7 @@ namespace Boruta\BitcoinVanity\Gateway;
 
 
 use Boruta\BitcoinVanity\Mapper\AddressWordEntityMapper;
+use Boruta\CommonAbstraction\Gateway\AbstractDatabaseGateway;
 
 /**
  * Class AddressWordGateway

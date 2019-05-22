@@ -4,8 +4,8 @@
  */
 
 use Boruta\BitcoinVanity\Command\DecryptDataCommand;
-use Boruta\BitcoinVanity\DependencyInjection\DependencyInjection;
-use Boruta\BitcoinVanity\ValueObject\RawString;
+use Boruta\CommonAbstraction\DependencyInjector\DependencyInjector;
+use Boruta\CommonAbstraction\ValueObject\RawString;
 
 /* config: */
 
@@ -18,6 +18,6 @@ DECRYPT;
 require __DIR__ . '/../vendor/autoload.php';
 
 /** @var DecryptDataCommand $decryptDataCommand */
-$decryptDataCommand = DependencyInjection::get(DecryptDataCommand::class);
+$decryptDataCommand = DependencyInjector::get(DecryptDataCommand::class);
 
 echo $decryptDataCommand->execute(new RawString($dataToDecrypt))->value() . PHP_EOL;

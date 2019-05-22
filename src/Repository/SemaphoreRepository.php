@@ -6,10 +6,10 @@
 namespace Boruta\BitcoinVanity\Repository;
 
 
-use Boruta\BitcoinVanity\Exception\RepositoryException;
+use Boruta\CommonAbstraction\Exception\RepositoryException;
 use Boruta\BitcoinVanity\Gateway\SemaphoreGateway;
-use Boruta\BitcoinVanity\ValueObject\RawString;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\RawString;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class SemaphoreRepository

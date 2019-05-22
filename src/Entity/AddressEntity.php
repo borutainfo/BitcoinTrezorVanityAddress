@@ -8,7 +8,7 @@ namespace Boruta\BitcoinVanity\Entity;
 
 use Boruta\BitcoinVanity\ValueObject\Address;
 use Boruta\BitcoinVanity\ValueObject\DerivedPath;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class AddressEntity

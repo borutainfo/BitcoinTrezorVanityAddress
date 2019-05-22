@@ -8,8 +8,8 @@ namespace Boruta\BitcoinVanity\Command;
 
 use Boruta\BitcoinVanity\Config\EncryptionConfig;
 use Boruta\BitcoinVanity\Exception\EncryptionException;
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
-use Boruta\BitcoinVanity\ValueObject\RawString;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\ValueObject\RawString;
 
 /**
  * Class EncryptDataCommand

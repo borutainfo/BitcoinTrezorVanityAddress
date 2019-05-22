@@ -7,10 +7,10 @@ namespace Boruta\BitcoinVanity\Hydrator;
 
 
 use Boruta\BitcoinVanity\Entity\PrivateKeyEntity;
-use Boruta\BitcoinVanity\Exception\ValueObjectException;
+use Boruta\CommonAbstraction\Exception\ValueObjectException;
 use Boruta\BitcoinVanity\Mapper\PrivateKeyEntityMapper;
-use Boruta\BitcoinVanity\ValueObject\RawString;
-use Boruta\BitcoinVanity\ValueObject\UnsignedNumber;
+use Boruta\CommonAbstraction\ValueObject\RawString;
+use Boruta\CommonAbstraction\ValueObject\UnsignedNumber;
 
 /**
  * Class PrivateKeyEntityHydrator

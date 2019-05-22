@@ -8,7 +8,7 @@ namespace Boruta\BitcoinVanity\Extractor;
 
 use Boruta\BitcoinVanity\Entity\WordEntity;
 use Boruta\BitcoinVanity\Mapper\WordEntityMapper;
-use Boruta\BitcoinVanity\ValueObject\ValueObjectInterface;
+use Boruta\CommonAbstraction\ValueObject\ValueObjectInterface;
 
 /**
  * Class WordEntityExtractor

@@ -8,7 +8,7 @@ namespace Boruta\BitcoinVanity\Extractor;
 
 use Boruta\BitcoinVanity\Entity\MnemonicSeedEntity;
 use Boruta\BitcoinVanity\Mapper\MnemonicSeedEntityMapper;
-use Boruta\BitcoinVanity\ValueObject\ValueObjectInterface;
+use Boruta\CommonAbstraction\ValueObject\ValueObjectInterface;
 
 /**
  * Class MnemonicSeedEntityExtractor
