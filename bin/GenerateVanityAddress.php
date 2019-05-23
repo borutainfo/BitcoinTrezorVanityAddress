@@ -11,7 +11,7 @@ use BitWasp\Bitcoin\Mnemonic\MnemonicFactory;
 use Boruta\BitcoinVanity\Collection\AddressEntityCollection;
 use Boruta\BitcoinVanity\Command\ConvertToAddressCommand;
 use Boruta\BitcoinVanity\Command\EncryptDataCommand;
-use Boruta\CommonAbstraction\Config\DatabaseConfig;
+use Boruta\BitcoinVanity\ServiceProvider\BasicServiceProvider;
 use Boruta\CommonAbstraction\DependencyInjector\DependencyInjector;
 use Boruta\BitcoinVanity\Entity\AddressEntity;
 use Boruta\BitcoinVanity\Entity\MnemonicSeedEntity;
@@ -40,9 +40,7 @@ error_reporting(E_ALL & ~E_STRICT & ~E_WARNING & ~E_NOTICE);
 
 echo 'Starting...' . PHP_EOL;
 
-DependencyInjector::set(DatabaseConfig::class, function () {
-    return new DatabaseConfig(__DIR__ . '/../config/database.yml');
-});
+DependencyInjector::register(BasicServiceProvider::class);
 
 /** @var PrivateKeyRepository $privateKeyRepository */
 $privateKeyRepository = DependencyInjector::get(PrivateKeyRepository::class);
