@@ -7,13 +7,13 @@ namespace Boruta\BitcoinVanity\Collection;
 
 
 use Boruta\BitcoinVanity\Entity\PrivateKeyEntity;
-use Boruta\CommonAbstraction\Collection\AbstractCollection;
+use Boruta\CommonAbstraction\Collection\CollectionAbstract;
 
 /**
  * Class PrivateKeyEntityCollection
  * @package Boruta\BitcoinVanity\Collection
  */
-class PrivateKeyEntityCollection extends AbstractCollection
+class PrivateKeyEntityCollection extends CollectionAbstract
 {
     protected const ELEMENT_CLASS = PrivateKeyEntity::class;
 }

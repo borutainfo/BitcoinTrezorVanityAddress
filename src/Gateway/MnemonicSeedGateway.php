@@ -7,13 +7,13 @@ namespace Boruta\BitcoinVanity\Gateway;
 
 
 use Boruta\BitcoinVanity\Mapper\MnemonicSeedEntityMapper;
-use Boruta\CommonAbstraction\Gateway\AbstractDatabaseGateway;
+use Boruta\CommonAbstraction\Gateway\MySQLGatewayAbstract;
 
 /**
  * Class MnemonicSeedGateway
  * @package Boruta\BitcoinVanity\Gateway
  */
-class MnemonicSeedGateway extends AbstractDatabaseGateway
+class MnemonicSeedGateway extends MySQLGatewayAbstract
 {
     /**
      * @param array $data

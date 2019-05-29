@@ -7,13 +7,13 @@ namespace Boruta\BitcoinVanity\Collection;
 
 
 use Boruta\BitcoinVanity\Entity\AddressEntity;
-use Boruta\CommonAbstraction\Collection\AbstractCollection;
+use Boruta\CommonAbstraction\Collection\CollectionAbstract;
 
 /**
  * Class AddressEntityCollection
  * @package Boruta\BitcoinVanity\Collection
  */
-class AddressEntityCollection extends AbstractCollection
+class AddressEntityCollection extends CollectionAbstract
 {
     protected const ELEMENT_CLASS = AddressEntity::class;
 }

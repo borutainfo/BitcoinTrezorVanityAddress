@@ -7,14 +7,14 @@ namespace Boruta\BitcoinVanity\Gateway;
 
 
 use Boruta\BitcoinVanity\Mapper\SemaphoreEntityMapper;
-use Boruta\CommonAbstraction\Config\DatabaseConfig;
-use Boruta\CommonAbstraction\Gateway\AbstractDatabaseGateway;
+use Boruta\CommonAbstraction\Config\MySQLConfig;
+use Boruta\CommonAbstraction\Gateway\MySQLGatewayAbstract;
 
 /**
  * Class SemaphoreGateway
  * @package Boruta\BitcoinVanity\Gateway
  */
-class SemaphoreGateway extends AbstractDatabaseGateway
+class SemaphoreGateway extends MySQLGatewayAbstract
 {
     /**
      * @var string
@@ -23,9 +23,9 @@ class SemaphoreGateway extends AbstractDatabaseGateway
 
     /**
      * SemaphoreGateway constructor.
-     * @param DatabaseConfig $databaseConfig
+     * @param MySQLConfig $databaseConfig
      */
-    public function __construct(DatabaseConfig $databaseConfig)
+    public function __construct(MySQLConfig $databaseConfig)
     {
         parent::__construct($databaseConfig);
         $this->instanceId = sha1(uniqid('semaphore', true));

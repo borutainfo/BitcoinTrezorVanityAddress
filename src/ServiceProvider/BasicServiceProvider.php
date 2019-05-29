@@ -6,7 +6,7 @@
 namespace Boruta\BitcoinVanity\ServiceProvider;
 
 
-use Boruta\CommonAbstraction\Config\DatabaseConfig;
+use Boruta\CommonAbstraction\Config\MySQLConfig;
 use Boruta\CommonAbstraction\DependencyInjector\DependencyInjector;
 use Boruta\CommonAbstraction\ServiceProvider\ServiceProviderInterface;
 
@@ -18,8 +18,8 @@ class BasicServiceProvider implements ServiceProviderInterface
 {
     public function register(): void
     {
-        DependencyInjector::set(DatabaseConfig::class, function () {
-            return new DatabaseConfig(__DIR__ . '/../../config/database.yml');
+        DependencyInjector::set(MySQLConfig::class, function () {
+            return new MySQLConfig(__DIR__ . '/../../config/mysql.yml');
         });
     }
 }

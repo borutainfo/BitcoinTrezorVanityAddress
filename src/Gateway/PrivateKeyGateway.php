@@ -7,13 +7,13 @@ namespace Boruta\BitcoinVanity\Gateway;
 
 
 use Boruta\BitcoinVanity\Mapper\PrivateKeyEntityMapper;
-use Boruta\CommonAbstraction\Gateway\AbstractDatabaseGateway;
+use Boruta\CommonAbstraction\Gateway\MySQLGatewayAbstract;
 
 /**
  * Class PrivateKeyGateway
  * @package Boruta\BitcoinVanity\Gateway
  */
-class PrivateKeyGateway extends AbstractDatabaseGateway
+class PrivateKeyGateway extends MySQLGatewayAbstract
 {
     /**
      * @param array $data

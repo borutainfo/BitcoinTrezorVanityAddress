@@ -7,13 +7,13 @@ namespace Boruta\BitcoinVanity\Gateway;
 
 
 use Boruta\BitcoinVanity\Mapper\WordEntityMapper;
-use Boruta\CommonAbstraction\Gateway\AbstractDatabaseGateway;
+use Boruta\CommonAbstraction\Gateway\MySQLGatewayAbstract;
 
 /**
  * Class WordGateway
  * @package Boruta\BitcoinVanity\Gateway
  */
-class WordGateway extends AbstractDatabaseGateway
+class WordGateway extends MySQLGatewayAbstract
 {
     /**
      * @param array $data
